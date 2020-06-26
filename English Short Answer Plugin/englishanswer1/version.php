@@ -18,13 +18,13 @@
  * arabicanswer1 question type version information.
  *
  * @package    qtype
- * @subpackage arabicanswer1
+ * @subpackage englishanswer1
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'qtype_arabicanswer1';
+$plugin->component = 'qtype_englishanswer1';
 $plugin->version   = 2019060300;
 
 $plugin->requires  = 2014051200;
