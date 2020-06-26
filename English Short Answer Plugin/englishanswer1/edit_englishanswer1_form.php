@@ -18,7 +18,7 @@
  * Defines the editing form for the arabicanswer question type.
  *
  * @package    qtype
- * @subpackage arabicanswer1
+ * @subpackage englishanswer1
  * @copyright  2019 Snoussi El Hareth & Madani Abderraouf For C00L07UN100120180002 Project
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -34,7 +34,7 @@ defined('MOODLE_INTERNAL') || die();
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class qtype_arabicanswer1_edit_form extends question_edit_form {
+class qtype_englishanswer1_edit_form extends question_edit_form {
 
     //Add question form
    protected function definition_inner($mform) {
@@ -42,8 +42,8 @@ class qtype_arabicanswer1_edit_form extends question_edit_form {
        
     
         $mform->addElement('static', 'answersinstruct',
-                get_string('modelanswer', 'qtype_arabicanswer1'),
-                get_string('provideanswer', 'qtype_arabicanswer1'));
+                get_string('modelanswer', 'qtype_englishanswer1'),
+                get_string('provideanswer', 'qtype_englishanswer1'));
         $mform->closeHeaderBefore('answersinstruct');
 
        
@@ -55,9 +55,9 @@ class qtype_arabicanswer1_edit_form extends question_edit_form {
         $repeatedoptions = array();
       
        
-       // $mform->addElement('text', 'answer', get_string('modelanswer', 'qtype_arabicanswer1'),
-                //array('size' => 150, 'maxlength' => 500));
-       $mform->addElement('textarea', 'answer',  get_string('modelanswer', 'qtype_arabicanswer1'), 'wrap="virtual" rows="10" cols="120"');
+       // $mform->addElement('text', 'answer', get_string('modelanswer', 'qtype_englishanswer1'),
+      //array('size' => 150, 'maxlength' => 500));
+       $mform->addElement('textarea', 'answer',  get_string('modelanswer', 'qtype_englishanswer1'), 'wrap="virtual" rows="10" cols="120"');
        $mform->setType('answer', PARAM_TEXT);
        $mform->addRule('answer', null, 'required', null, 'client');
       
@@ -92,6 +92,6 @@ class qtype_arabicanswer1_edit_form extends question_edit_form {
 
 
     public function qtype() {
-        return 'arabicanswer1';
+        return 'englishanswer1';
     }
 }
