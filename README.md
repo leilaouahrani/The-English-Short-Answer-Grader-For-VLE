@@ -9,6 +9,8 @@ and Scientific Research in Algeria (Project C00L07UN100120180002)
  
 Conception & Supervision : L. Ouahrani & D. Bennouar
 
+License : http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+
 =======================
 CONTENTS
 1. Introduction
