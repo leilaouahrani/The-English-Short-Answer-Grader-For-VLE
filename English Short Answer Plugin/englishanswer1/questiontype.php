@@ -15,10 +15,10 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Defines the editing form for the arabicanswer question type.
+ * Defines the editing form for the englishanswer1 question type.
  *
  * @package    qtype
- * @subpackage arabicanswer
+ * @subpackage englishanswer1
  * @copyright  2019 Snoussi El Hareth & Madani Abderraouf For C00L07UN100120180002 Project
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -28,7 +28,7 @@ defined('MOODLE_INTERNAL') || die();
 
 require_once($CFG->libdir . '/questionlib.php');
 require_once($CFG->dirroot . '/question/engine/lib.php');
-require_once($CFG->dirroot . '/question/type/arabicanswer1/question.php');
+require_once($CFG->dirroot . '/question/type/englishanswer1/question.php'); 
 
 
 /**
@@ -38,7 +38,7 @@ require_once($CFG->dirroot . '/question/type/arabicanswer1/question.php');
 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-class qtype_arabicanswer1 extends question_type {
+class qtype_englishanswer1 extends question_type {
 
     /*******************************************************************************************************************************************/
  /**
@@ -121,16 +121,16 @@ class qtype_arabicanswer1 extends question_type {
         
         // Save question options in question_arabicanswer1 table.
        
-        if ($options = $DB->get_record('qtype_arabicanswer1_options', array('questionid' => $question->id))) {
+        if ($options = $DB->get_record('qtype_englishanswer1_options', array('questionid' => $question->id))) {
             // No need to do anything, since the answer IDs won't have changed
             // But we'll do it anyway, just for robustness.
  
-            $DB->update_record('qtype_arabicanswer1_options', $options);
+            $DB->update_record('qtype_englishanswer1_options', $options);
         } else {
             $options = new stdClass();
             $options->questionid  = $question->id;
             
-            $DB->insert_record('qtype_arabicanswer1_options', $options);
+            $DB->insert_record('qtype_englishanswer1_options', $options);
         }
 
       
@@ -195,7 +195,7 @@ class qtype_arabicanswer1 extends question_type {
     /*Delete  question from all tables( specific and general table)*/
  public function delete_question($questionid, $contextid) {
         global $DB;
-        $DB->delete_records('qtype_arabicanswer1_options', array('questionid' => $questionid));
+        $DB->delete_records('qtype_englishanswer1_options', array('questionid' => $questionid));
 
             
         parent::delete_question($questionid, $contextid);
@@ -212,7 +212,7 @@ class qtype_arabicanswer1 extends question_type {
             $question->options = new stdClass();
         }
         
-        $question->options = $DB->get_record('qtype_arabicanswer1_options',
+        $question->options = $DB->get_record('qtype_englishanswer1_options',
                 array('questionid' => $question->id));
         $question->options->answers = $DB->get_records('question_answers',
         array('question' => $question->id), 'id ASC');
