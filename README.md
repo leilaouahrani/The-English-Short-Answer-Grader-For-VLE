@@ -1,6 +1,6 @@
-# Arabic-Short-Answer-Grader-For-VLE
+# The English-Short-Answer-Grader-For-VLE
  
-The Arabic Short Answer Grader For Virtual Learning Environment using Arabic NLP Computation 
+The English Short Answer Grader For Virtual Learning Environment using English NLP Computation 
                                     Version 1.0
                                     
 =======================        
@@ -34,11 +34,9 @@ The grader is implemented as a plugin Moodle which extends the question_type_Eng
 formulated in natural language.   
 We use a semantic space for Word distribution based on word cooccurrences in text corpora to capture similarity. 
 The approach does not require word data models(WordNet, ArabicWordNet,  ....).  
-It is particularly suitable in situations where no large, publicly available, linguistic resources can be found
-for the desired language such as the Arabic Language. 
- 
+  
 Actually the Grader is used on Moodle Bouira University Plateform for the learning and the assessment of 
-the CyberCrimes Course in Computer Science Department.
+the Oriented Object Programming Course in Computer Science Department.
 
 =======================
 2. Folder Structure (Plugin Moodle + Grader code on distant server)
@@ -55,7 +53,7 @@ https://docs.moodle.org/37/en/Short-Answer_question_type
 =========================
 2.b. Grader code on Distant server /
 
-The Approach used for the grader is described here : https://ieeexplore.ieee.org/document/8672717
+The Approach used for the grader is described here : https://ieeexplore.ieee.org/document/8672717  applied to English.
 The grader function is deployed on a distant server (Pythonanywhere) to release the platform 
 from the assessment task for this question type, 
 particularly when scoring a large number of online students at the same time.
