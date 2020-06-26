@@ -19,7 +19,7 @@
  *
  * @package    qtype
  * @subpackage arabicanswer1
- * @copyright  2019 Snoussi El Hareth & Madani Abderraouf For C00L07UN100120180002 Project
+ * @copyright  2019 Snoussi El Hareth & Madani Abderraouf For C00L07UN100120180002 Project 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -28,8 +28,8 @@ defined('MOODLE_INTERNAL') || die();
 
 /*callback here that is called by the question engine to allow access to files used by questions.*/
 /**
- * Checks file access for arabicanswer questions.
- * @package  qtype_arabicanswer
+ * Checks file access for englishanswer1 questions.
+ * @package  qtype_englishanswer1
  * @category files
  * @param stdClass $course course object
  * @param stdClass $cm course module object
@@ -40,8 +40,8 @@ defined('MOODLE_INTERNAL') || die();
  * @param array $options additional options affecting the file serving
  * @return bool
  */
-function qtype_arabicanswer1_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options=array()) {
+function qtype_englishanswer1_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options=array()) {
     global $DB, $CFG;
     require_once($CFG->libdir . '/questionlib.php');
-    question_pluginfile($course, $context, 'qtype_arabicanswer1', $filearea, $args, $forcedownload, $options);
+    question_pluginfile($course, $context, 'qtype_englishanswer1', $filearea, $args, $forcedownload, $options);
 }
