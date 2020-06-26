@@ -15,10 +15,10 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Defines the editing form for the arabicanswer question type.
+ * Defines the editing form for the englishanswer1 question type.
  *
  * @package    qtype
- * @subpackage arabicanswer1
+ * @subpackage englishanswer1
  * @copyright  2019 Snoussi El Hareth & Madani Abderraouf For C00L07UN100120180002 Project
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -29,14 +29,14 @@ defined('MOODLE_INTERNAL') || die();
 
 
 /**
- * Generates the output for arabicanswer1 questions.
+ * Generates the output for englishanswer1 questions.
  *
  *@copyright  2019 Snoussi El Hareth & Madani Abderraouf For C00L07UN100120180002 Project
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 //Question outputs
-class qtype_arabicanswer1_renderer extends qtype_renderer {
+class qtype_englishanswer1_renderer extends qtype_renderer {
     public function formulation_and_controls(question_attempt $qa,
             question_display_options $options) {
 
@@ -140,7 +140,7 @@ This method takes three arguments and is the combination of start_tag and end_ta
         
         if (!$placeholder) {
             $result .= html_writer::start_tag('div', array('class' => 'ablock form-inline'));
-            $result .= html_writer::tag('label', get_string('answer', 'qtype_arabicanswer1',
+            $result .= html_writer::tag('label', get_string('answer', 'qtype_englishanswer1',
                     html_writer::tag('span', $input, array('class' => 'answer'))),
                     array('for' => $inputattributes['id']));
             $result .= html_writer::end_tag('div');
@@ -157,12 +157,12 @@ This method takes three arguments and is the combination of start_tag and end_ta
     // Feedback
     public function specific_feedback(question_attempt $qa) {
         $fraction = $qa->get_fraction();
-        if(0.9 <=$fraction && $fraction <= 1){return get_string('verygood','qtype_arabicanswer1');  }
-            else  if(0.75 <= $fraction && $fraction < 0.9){return get_string('good','qtype_arabicanswer1');  }
-        else  if(0.6 <= $fraction && $fraction < 0.75){return get_string('satisfactory','qtype_arabicanswer1');  }
-        else  if(0.5 <= $fraction && $fraction < 0.6){return get_string('average','qtype_arabicanswer1');  }
-        else  if(0.25 <= $fraction && $fraction < 0.5){return get_string('poor','qtype_arabicanswer1');  }
-                else {return get_string('failed','qtype_arabicanswer1');}
+        if(0.9 <=$fraction && $fraction <= 1){return get_string('verygood','qtype_englishanswer1');  }
+            else  if(0.75 <= $fraction && $fraction < 0.9){return get_string('good','qtype_englishanswer1');  }
+        else  if(0.6 <= $fraction && $fraction < 0.75){return get_string('satisfactory','qtype_englishanswer1');  }
+        else  if(0.5 <= $fraction && $fraction < 0.6){return get_string('average','qtype_englishanswer1');  }
+        else  if(0.25 <= $fraction && $fraction < 0.5){return get_string('poor','qtype_englishanswer1');  }
+                else {return get_string('failed','qtype_englishanswer1');}
       
         
     }
@@ -179,11 +179,11 @@ This method takes three arguments and is the combination of start_tag and end_ta
         }
         
         if($fraction == 1)
-        return get_string('modelansweris', 'qtype_arabicanswer1',
+        return get_string('modelansweris', 'qtype_englishanswer1',
                $answer['answer']);
 
         if($fraction != 1)
-        return get_string('correctansweris', 'qtype_arabicanswer1',
+        return get_string('correctansweris', 'qtype_englishanswer1',
                $answer['answer']);
     }
     
