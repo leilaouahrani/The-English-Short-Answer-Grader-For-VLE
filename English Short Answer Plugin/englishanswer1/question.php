@@ -15,20 +15,19 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Defines the editing form for the arabicanswer1 question type.
+ * Defines the editing form for the englishanswer1 question type.
  *
  * @package    qtype
- * @subpackage arabicanswer1
+ * @subpackage englishanswer1
  * @copyright  2019 Snoussi El Hareth & Madani Abderraouf For C00L07UN100120180002 Project
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-
 
 defined('MOODLE_INTERNAL') || die();
 require_once($CFG->dirroot . '/question/type/questionbase.php');
 
 /**
- * Represents a arabicanswer1 question.
+ * Represents an englishanswer1 question using NLP Computation.
  *
  * @copyright  2019 Snoussi El Hareth & Madani Abderraouf For C00L07UN100120180002 Project
 
@@ -36,7 +35,7 @@ require_once($CFG->dirroot . '/question/type/questionbase.php');
  */
 /*Construct a question type instance everytime we create a new question*/
  
-class qtype_arabicanswer1_question extends question_graded_automatically {
+class qtype_englishanswer1_question extends question_graded_automatically {
     public function __construct() {
         parent::__construct();
     }
@@ -117,7 +116,7 @@ class qtype_arabicanswer1_question extends question_graded_automatically {
         if ($this->is_gradable_response($response)) {
             return '';
         }
-        return get_string('pleaseenterananswer', 'qtype_arabicanswer1');
+        return get_string('pleaseenterananswer', 'qtype_englishanswer1');
     }
 
 
@@ -208,7 +207,7 @@ class qtype_arabicanswer1_question extends question_graded_automatically {
 /********************************************************************************************/
 /**
      * Here we put our grader which is deployed on pythonanywhere   
-     * Grade a response to the question, returning a fraction between
+     * Grade a response to the question, returning a fraction 
      * get_min_fraction() and get_max_fraction(), and the corresponding {@link question_state}
      * right, partial or wrong.
      * @param array $response responses, as returned by
@@ -233,7 +232,7 @@ class qtype_arabicanswer1_question extends question_graded_automatically {
         $data =  str_replace(array("\r", "\n"), " ", self::safe_normalize($response['answer']));
         $curlvar= curl_init(); //Initialize the cURL var
         curl_setopt($curlvar,CURLOPT_RETURNTRANSFER, 1); //Get the response from cURL
-        curl_setopt($curlvar,CURLOPT_URL,'http://shortanswerplugin.pythonanywhere.com/?donnee='.self::checkInput($donnee).'&data='.self::checkInput($data)); //Set the Url
+        curl_setopt($curlvar,CURLOPT_URL,'http://englishanswer1.pythonanywhere.com/?donnee='.self::checkInput($donnee).'&data='.self::checkInput($data)); //Set the Url
         $content= (string) self::checkInput(curl_exec($curlvar));
         curl_close($curlvar);
         $fraction = (float)$content;
