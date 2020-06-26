@@ -2,7 +2,7 @@
 """
 Created on Sat Jun 20 19:28:48 2020
 
-@author: Salah Abdellaoui 
+@author: Salah Abdellaoui For the C00L07UN100120180002 Project
 """
 
 import io
@@ -100,20 +100,20 @@ def similarity(NWORDS,s1, s2):
     p1 = s1.split()
     p2 = s2.split()
     #*******************************************************************************************
-    # Recuperation des vecteurs de contexte de chaque mot des 2 rĂ©ponses s1 et s2 dans v1 et v2
+    #  Vector Contexts for each word in model answer and student answer  s1 et s2 In  v1 et v2
     v1, v2 = [0.0 for i in range(len(p1))], [0.0 for i in range(len(p2))]
     for i in range(len(p1)):
         if p1[i] in NWORDS:
             #print("mot: ",p1[i])
             x = NWORDS.index(p1[i])
             # v1[i]=Norm[x]
-            v1[i] = cc.getline("/home/Raoufy/mysite/pythonanywhere/SemanticSpace.txt",x+1)
+            v1[i] = cc.getline("/home/englishanswer1/mysite/pythonanywhere/SemanticSpace.txt",x+1)
             v1[i]=v1[i].split()
             #v1[i]=list(map(float,v1[i]))
            # print("Vecteur :",v1[i])
             if p1[i] in NWORDS:
                 y= NWORDS.index(p1[i])
-                id=float(cc.getline("/home/Raoufy/mysite/pythonanywhere/TF_MinMax.txt",y+1))
+                id=float(cc.getline("/home/englishanswer1/mysite/pythonanywhere/TF_MinMax.txt",y+1))
             else:
                 id=1
             v1[i] = [float(j) * id for j in v1[i]]
@@ -126,11 +126,11 @@ def similarity(NWORDS,s1, s2):
     for i in range(len(p2)):
         if p2[i] in NWORDS:
             x = NWORDS.index(p2[i])
-            v2[i] = cc.getline("/home/Raoufy/mysite/pythonanywhere/SemanticSpace.txt",x+1)
+            v2[i] = cc.getline("/home/englishanswer1/mysite/pythonanywhere/SemanticSpace.txt",x+1)
             v2[i]=v2[i].split()
             if p2[i]in NWORDS:
                 y = NWORDS.index(p2[i])
-                id = float(cc.getline("/home/Raoufy/mysite/pythonanywhere/TF_MinMax.txt",y+1))
+                id = float(cc.getline("/home/englishanswer1/mysite/pythonanywhere/TF_MinMax.txt",y+1))
             else:
                 id=1
             v2[i] = [float(j) * id for j in v2[i]]
@@ -140,7 +140,7 @@ def similarity(NWORDS,s1, s2):
             #print("Vecteur :",v2[i])
 
     #***************************************************************************
-    # calcul de similarite par application de similarity de cosinus
+    #  Similarity Calculation
     W1 = [0 for i in range(len(NWORDS))]
     for i in range(len(NWORDS)):
         for j in range(len(v1)):
@@ -160,7 +160,7 @@ def home():
             x2= request.args.get('data')
 
 
-    with c.open("/home/Raoufy/mysite/pythonanywhere/Words.txt","r","utf-8")as f:
+    with c.open("/home/englishanswer1/mysite/pythonanywhere/Words.txt","r","utf-8")as f:
             stocks = f.read()
 
     stocks = stocks.split()
