@@ -18,14 +18,14 @@
  * Defines the editing form for the arabicanswer1 question type.
  *
  * @package    qtype
- * @subpackage arabicanswer1
+ * @subpackage englishanswer1
  * @copyright  2019 Snoussi El Hareth & Madani Abderraouf For C00L07UN100120180002 Project
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['pluginname'] = 'Reponse Courte Semantique 1';
+$string['pluginname'] = 'Reponse Courte Semantique 1- NLP Anglais';
 $string['pluginname_help'] = 'Il faut entrer une réponse courte en ciblant directement le concept étudié';
-$string['pluginname_link'] = 'question/type/arabicanswer1';
+$string['pluginname_link'] = 'question/type/englishanswer1';
 $string['pluginnameadding'] = 'Ajout d\'une question arabicanswer1';
 $string['pluginnameediting'] = 'Modification d\'une question arabicanswer1';
 $string['pluginnamesummary'] = 'Une question Reponse Courte Semantique est une question qui note  automatiquement les réponses des étudiants en fonction d’une similarité sémantique avec la réponse modèle de l’enseignant.';
