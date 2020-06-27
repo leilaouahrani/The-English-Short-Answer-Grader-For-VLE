@@ -53,7 +53,6 @@ https://docs.moodle.org/37/en/Short-Answer_question_type
 =========================
 2.b. Grader code on Distant server /
 
-The Approach used for the grader is described here : https://ieeexplore.ieee.org/document/8672717  applied to English.
 The grader function is deployed on a distant server (Pythonanywhere) to release the platform 
 from the assessment task for this question type, 
 particularly when scoring a large number of online students at the same time.
@@ -64,7 +63,7 @@ A PHP cURL script is used to connect the plugin to the Flask API which deploys t
 3. How to deploy ?
 
 - The Plugin must be installed on a Moodle plateforme to be used:
-(Install the arabicanswer1.zip)
+(Install the englishanswer1.zip)
   (Dashboard / Site administration / Plugins / Install plugins). 
 - A PHP cURL script is used to connect the plugin to the Flask API which deploys the grader on PythonanyWhere(already donne in the plugin).
 
