@@ -27,7 +27,7 @@ CONTENTS
 =======================
 1. Introduction
 
-This README v1.0 (June, 2020) is for The Arabic Short Answer Grader For Virtual Learning Environment 
+This README v1.0 (June, 2020) is for The English Short Answer Grader For Virtual Learning Environment 
 using Arabic Linguistic statistical computations.
 
 The grader is implemented as a plugin Moodle which extends the question_type_Engine of Moodle to grade open-ended short answers
