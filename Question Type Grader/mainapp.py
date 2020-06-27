@@ -104,13 +104,13 @@ def similarity(NWORDS,s1, s2):
     v1, v2 = [0.0 for i in range(len(p1))], [0.0 for i in range(len(p2))]
     for i in range(len(p1)):
         if p1[i] in NWORDS:
-            #print("mot: ",p1[i])
+            #print("word: ",p1[i])
             x = NWORDS.index(p1[i])
             # v1[i]=Norm[x]
             v1[i] = cc.getline("/home/englishanswer1/mysite/pythonanywhere/SemanticSpace.txt",x+1)
             v1[i]=v1[i].split()
-            #v1[i]=list(map(float,v1[i]))
-           # print("Vecteur :",v1[i])
+            # v1[i]=list(map(float,v1[i]))
+            # print("Vector :",v1[i])
             if p1[i] in NWORDS:
                 y= NWORDS.index(p1[i])
                 id=float(cc.getline("/home/englishanswer1/mysite/pythonanywhere/TF_MinMax.txt",y+1))
@@ -121,7 +121,7 @@ def similarity(NWORDS,s1, s2):
         else:
             print("mot: ",p1[i])
             v1[i] = [0.0 for ii in range(len(NWORDS))]
-            #print("Vecteur :",v1[i])
+            #print("Vector :",v1[i])
 
     for i in range(len(p2)):
         if p2[i] in NWORDS:
@@ -137,7 +137,7 @@ def similarity(NWORDS,s1, s2):
         else:
             print("mot non trouve: ",p2[i])
             v2[i] = [0.0 for ii in range(len(NWORDS))]
-            #print("Vecteur :",v2[i])
+            #print("Vector :",v2[i])
 
     #***************************************************************************
     #  Similarity Calculation
@@ -165,14 +165,14 @@ def home():
 
     stocks = stocks.split()
     NWORDS = stocks
-    #x1 = SpellChecker(x1)
-    #x2 = SpellChecker(x2)
+    x1 = SpellChecker(x1)
+    x2 = SpellChecker(x2)
     x1,x2 = Norm(x1,x2)
 
-    sim=similarity(NWORDS,x1,x2)
-    #sim2=dice(x1,x2)
-    #sim3=(sim+sim2)/2
-    sim3=round(sim,2)
+    sim1=similarity(NWORDS,x1,x2)
+    sim2=dice(x1,x2)
+    sim3=(sim1*0.8+sim2*0.2)
+    sim3=round(sim3,2)
     return str(sim3)
 
 
